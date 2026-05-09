@@ -2,7 +2,7 @@
 
 import Link from 'next/link';
 import { useState } from 'react';
-import { SITE, NAV_PRIMARY } from '@/lib/site';
+import { NAV_PRIMARY } from '@/lib/site';
 
 export function Header() {
   const [open, setOpen] = useState(false);
@@ -26,14 +26,7 @@ export function Header() {
         </nav>
 
         <div className="flex items-center gap-3">
-          <a
-            href={`tel:${SITE.phoneRaw}`}
-            className="hidden md:inline-flex items-center gap-2 rounded-md border border-ink/15 bg-white px-3 py-2 text-sm font-semibold text-ink hover:border-rust hover:text-rust transition"
-          >
-            <PhoneIcon />
-            <span>{SITE.phone}</span>
-          </a>
-          <Link href="/quote" className="hidden md:inline-flex btn-primary !py-2.5 !px-4 !text-sm">Free Estimate</Link>
+          <Link href="/quote" className="hidden md:inline-flex btn-primary !py-2.5 !px-4 !text-sm">Get a Free Estimate</Link>
           <button
             aria-label="Menu"
             className="lg:hidden grid h-10 w-10 place-items-center rounded-md border border-ink/15 bg-white"
@@ -54,19 +47,10 @@ export function Header() {
                 {n.label}
               </Link>
             ))}
-            <a href={`tel:${SITE.phoneRaw}`} className="rounded-md px-3 py-3 text-base font-semibold text-rust">Call {SITE.phone}</a>
-            <Link href="/quote" onClick={() => setOpen(false)} className="btn-primary mt-2">Free Estimate</Link>
+            <Link href="/quote" onClick={() => setOpen(false)} className="btn-primary mt-2">Get a Free Estimate</Link>
           </div>
         </div>
       )}
     </header>
-  );
-}
-
-function PhoneIcon() {
-  return (
-    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-      <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.86 19.86 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A19.86 19.86 0 0 1 2.12 4.18 2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.97.36 1.92.7 2.83a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.25-1.27a2 2 0 0 1 2.11-.45c.91.34 1.86.57 2.83.7A2 2 0 0 1 22 16.92Z"/>
-    </svg>
   );
 }

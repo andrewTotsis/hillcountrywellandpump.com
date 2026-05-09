@@ -27,7 +27,7 @@ const HOMEPAGE_FAQS = [
   { q: 'How deep are wells in the Texas Hill Country?', a: 'Most Hill Country wells fall between 250 and 700 feet. Fredericksburg and Mason area wells (Hickory aquifer) often run 500–800 ft. Boerne and Comfort wells (Trinity aquifer) commonly land 350–650 ft. Dripping Springs varies the most — anywhere from 300 to 900 ft.' },
   { q: 'How much does a water well cost in Texas?', a: 'A complete turnkey residential system in the Hill Country typically runs $18,000 to $32,000 — drilling, casing, pump, pressure tank, and tie-in included. Deep Hickory wells in the Fredericksburg area can run $22,000 to $38,000. Financing is available.' },
   { q: 'What are the signs my well pump is failing?', a: 'No water at the faucets, pressure that drops fast, pump that runs constantly without shutting off, breaker tripping when the pump kicks on, air spitting at the faucets, and sudden cloudiness or sand in the water are the most common warning signs.' },
-  { q: 'What do I do if my property has no water?', a: 'First, check the breaker for the well pump and the pressure switch — those cause maybe 30% of no-water calls. If the breaker is on and you still have nothing, call us. We carry the most common pump and pressure tank parts on the truck and can usually restore water on the first visit.' },
+  { q: 'What do I do if my property has no water?', a: 'First, check the breaker for the well pump and the pressure switch — those cause about 30% of no-water situations. If the breaker is on and you still have nothing, submit a request and flag it as Urgency 5. We carry the most common pump and pressure tank parts on the truck and can usually restore water on the first visit.' },
   { q: 'How is a residential well different from an agricultural well?', a: 'A residential well is sized for fixture count — bathrooms, washing machines, an outside hose. An ag well is sized for sustained livestock or irrigation demand and usually has a larger pump, larger pressure tank or buffer storage, and heavier electrical service.' },
   { q: 'Why does my water pressure keep dropping?', a: 'Most pressure problems trace to a waterlogged pressure tank, a failing pressure switch, scale buildup in the pipes, or a pump that’s losing performance. We diagnose pressure problems systematically — pressure switch, tank pre-charge, amp draw, drawdown — before recommending any repair.' },
   { q: 'How often should I have my well maintained?', a: 'Annual: water test (bacterial + nitrates), pressure tank pre-charge check, sanitary cap inspection. Every 3–5 years: full mineral and metals panel, amp draw and insulation test on the pump.' },
@@ -66,7 +66,7 @@ export default function HomePage() {
           <div className="grid grid-cols-2 gap-4">
             <Stat n="25+" label="Years drilling the Hill Country" />
             <Stat n="3,200+" label="Wells installed across Texas" />
-            <Stat n="<1 hr" label="Average emergency callback" />
+            <Stat n="<1 hr" label="Average emergency response" />
             <Stat n="4.9★" label="From 187+ verified reviews" />
           </div>
         </div>
@@ -116,7 +116,7 @@ export default function HomePage() {
             />
             <Article
               title="What to do if your property has no water"
-              body="A 5-minute homeowner checklist before you call us — saves time and sometimes the service fee."
+              body="A 5-minute homeowner checklist before you submit a request — saves time and sometimes the service fee."
               href="/blog/no-water-checklist"
             />
             <Article

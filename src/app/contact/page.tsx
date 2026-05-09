@@ -6,7 +6,7 @@ import { BreadcrumbSchema } from '@/components/Schema';
 export const metadata: Metadata = {
   title: 'Contact | Hill Country Well & Pump',
   description:
-    'Call, email, or send a request. 24/7 emergency line available across the Texas Hill Country.',
+    'Send us a quote request or message — we respond fast across the Texas Hill Country. Emergency requests prioritized.',
   alternates: { canonical: '/contact' },
 };
 
@@ -16,18 +16,20 @@ export default function ContactPage() {
       <section className="border-b border-ink/10 bg-bone">
         <div className="container-wide py-14 md:py-20">
           <span className="eyebrow">Contact</span>
-          <h1 className="h-display mt-3">Let’s talk.</h1>
+          <h1 className="h-display mt-3">Send us your request.</h1>
+          <p className="mt-4 max-w-2xl text-lg text-ink/70">
+            Fill in the form and we’ll have an estimator follow up. Emergencies are flagged and routed first — no phone tag.
+          </p>
         </div>
       </section>
 
       <section className="section">
         <div className="container-narrow grid gap-10 md:grid-cols-5">
           <div className="md:col-span-2 space-y-4">
-            <Block title="Call" body={<a className="text-rust hover:underline" href={`tel:${SITE.phoneRaw}`}>{SITE.phone}</a>} />
             <Block title="Email" body={<a className="text-rust hover:underline break-all" href={`mailto:${SITE.email}`}>{SITE.email}</a>} />
             <Block title="Hours" body={<span>{SITE.hours}</span>} />
-            <Block title="Address" body={<span>{SITE.address.street}<br/>{SITE.address.city}, {SITE.address.region} {SITE.address.postalCode}</span>} />
-            <Block title="Emergency" body={<span>24/7 no-water emergency line. We answer.</span>} />
+            <Block title="Service Area" body={<span>Across the Texas Hill Country — Fredericksburg, Boerne, Marble Falls, Dripping Springs, Burnet & Blanco Counties.</span>} />
+            <Block title="Emergency" body={<span>Flag your request as <span className="font-bold text-rust">Urgency&nbsp;5 · No-Water Emergency</span> and you’ll skip the queue.</span>} />
           </div>
           <div className="md:col-span-3">
             <QuoteForm />

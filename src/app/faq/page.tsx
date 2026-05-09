@@ -33,7 +33,7 @@ export default function FAQPage() {
           <span className="eyebrow">FAQ</span>
           <h1 className="h-display mt-3 max-w-3xl">Texas Hill Country water well questions.</h1>
           <p className="mt-5 max-w-2xl text-lg text-ink/70">
-            Everything we get asked, answered straight. Don’t see what you need? Call us.
+            Everything we get asked, answered straight. Don’t see what you need? Send a quick request — we’ll get back to you fast.
           </p>
         </div>
       </section>

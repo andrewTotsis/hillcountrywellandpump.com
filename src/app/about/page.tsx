@@ -20,7 +20,7 @@ export default function AboutPage() {
           <span className="eyebrow">About</span>
           <h1 className="h-display mt-3 max-w-3xl">{SITE.yearsInBusiness}+ years drilling the Texas Hill Country.</h1>
           <p className="mt-5 max-w-2xl text-lg text-ink/70">
-            We’re a family-owned, licensed Texas water well company. We drill, install, and repair — and we answer the phone after hours when something goes wrong.
+            We’re a family-owned, licensed Texas water well company. We drill, install, and repair — and we follow up fast on every request, day or night.
           </p>
         </div>
       </section>
@@ -30,10 +30,10 @@ export default function AboutPage() {
           <div>
             <h2 className="h-section">Why we exist.</h2>
             <p className="mt-5 text-base md:text-lg leading-relaxed text-ink/75">
-              The Hill Country is full of out-of-town drillers who don’t answer the phone after they leave the job site. We started this company because the homeowners we knew kept getting burned — over-priced installs, undersized pumps, and crews that disappeared when something failed in year three.
+              The Hill Country is full of out-of-town drillers who go silent the day after they leave the job site. We started this company because the homeowners we knew kept getting burned — over-priced installs, undersized pumps, and crews that disappeared when something failed in year three.
             </p>
             <p className="mt-4 text-base md:text-lg leading-relaxed text-ink/75">
-              We do this differently. Our family lives here. Our trucks are here. The same crew that drills your well comes back every time you call.
+              We do this differently. Our family lives here. Our trucks are here. The same crew that drills your well comes back every time you reach out.
             </p>
           </div>
           <div>
@@ -75,7 +75,7 @@ export default function AboutPage() {
           <p className="mt-4 max-w-xl mx-auto text-bone/75">No-pressure on-site visit. Real numbers. Real timelines.</p>
           <div className="mt-7 flex flex-wrap justify-center gap-3">
             <Link href="/quote" className="btn-primary">Free Estimate</Link>
-            <a href={`tel:${SITE.phoneRaw}`} className="btn-emergency !bg-bone !text-ink">Call {SITE.phone}</a>
+            <Link href="/quote?urgency=5" className="btn-emergency !bg-bone !text-ink">No-Water Emergency</Link>
           </div>
         </div>
       </section>

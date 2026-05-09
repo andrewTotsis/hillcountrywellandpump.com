@@ -9,3 +9,5 @@ out
 *.log
 next-env.d.ts
 .turbo
+
+.vercel

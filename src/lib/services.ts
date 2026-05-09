@@ -109,9 +109,9 @@ export const SERVICES: Service[] = [
   {
     slug: 'emergency-no-water-service',
     name: 'Emergency No-Water Service',
-    short: '24/7 no-water emergency response. We answer the phone.',
+    short: '24/7 no-water emergency response. Submit and we move fast.',
     hero:
-      'A house with no water is an emergency. We answer the phone after hours, dispatch the same day in most cases, and prioritize households with no other water source, livestock at risk, and elderly residents.',
+      'A house with no water is an emergency. Submit an Urgency 5 request and you skip the queue — we dispatch the same day in most cases, and prioritize households with no other water source, livestock at risk, and elderly residents.',
     symptoms: [
       'House is completely dry',
       'Lost water during a storm or after a power surge',
@@ -119,17 +119,17 @@ export const SERVICES: Service[] = [
       'Pump runs but nothing comes out',
     ],
     trust: [
-      'Real human answers the after-hours line',
+      'Real human reviews every after-hours request',
       'Same-day dispatch in most of the Hill Country',
       'Full truck stock — most repairs done on the first visit',
     ],
     faqs: [
-      { q: 'What’s the after-hours emergency rate?', a: 'We charge a single, transparent emergency dispatch fee — never per-hour gouging. You’ll know the number on the phone before we roll a truck.' },
+      { q: 'What’s the after-hours emergency rate?', a: 'We charge a single, transparent emergency dispatch fee — never per-hour gouging. You’ll have a confirmed number before we roll a truck.' },
       { q: 'How fast can you be here?', a: 'In most of the Hill Country, 1–4 hours during business hours and same-evening for after-hours emergencies.' },
     ],
     meta: {
       title: 'Emergency No-Water Service Texas Hill Country | 24/7 | Hill Country Well & Pump',
-      description: '24/7 emergency no-water service across the Texas Hill Country. Same-day dispatch. We answer the phone. Licensed, insured.',
+      description: '24/7 emergency no-water service across the Texas Hill Country. Same-day dispatch. Submit an emergency request and skip the queue. Licensed, insured.',
     },
   },
   {

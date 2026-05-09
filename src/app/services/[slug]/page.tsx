@@ -48,7 +48,11 @@ export default async function ServicePage({ params }: { params: Promise<{ slug: 
           <p className={`mt-5 max-w-3xl text-lg leading-relaxed ${isEmergency ? 'text-bone/85' : 'text-ink/70'}`}>{s.hero}</p>
           <div className="mt-8 flex flex-wrap gap-3">
             <Link href={`/quote?service=${s.slug}`} className="btn-primary">Request a Free Estimate</Link>
-            <a href={`tel:+18305550144`} className={isEmergency ? 'btn-primary !bg-bone !text-ink' : 'btn-secondary'}>Call Now</a>
+            {isEmergency ? (
+              <Link href={`/quote?service=${s.slug}&urgency=5`} className="btn-primary !bg-bone !text-ink">Submit Emergency Request</Link>
+            ) : (
+              <Link href="/services" className="btn-secondary">All Services</Link>
+            )}
           </div>
         </div>
       </section>
@@ -63,7 +67,7 @@ export default async function ServicePage({ params }: { params: Promise<{ slug: 
       {s.symptoms && (
         <section className="section">
           <div className="container-narrow">
-            <span className="eyebrow">Common reasons people call us</span>
+            <span className="eyebrow">Common reasons people reach out</span>
             <h2 className="h-section mt-3">Sound familiar?</h2>
             <ul className="mt-8 grid gap-3 md:grid-cols-2">
               {s.symptoms.map((sym, i) => (
@@ -149,7 +153,7 @@ export default async function ServicePage({ params }: { params: Promise<{ slug: 
             </p>
             <div className="mt-6 rounded-xl border border-ink/10 bg-white p-5">
               <p className="text-sm font-semibold text-ink">Financing available</p>
-              <p className="mt-2 text-sm text-ink/65">Most homeowners qualify for monthly payments instead of a lump sum. Ask when you call.</p>
+              <p className="mt-2 text-sm text-ink/65">Most homeowners qualify for monthly payments instead of a lump sum. Ask in the form notes.</p>
             </div>
           </div>
           <div className="md:col-span-3">

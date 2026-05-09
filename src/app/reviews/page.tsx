@@ -15,7 +15,7 @@ const MORE = [
   { name: 'Russell H.', where: 'Marble Falls, TX', body: 'Replaced our 17-year-old pump. Same-day service, fair price, and they put a real Franklin in instead of the cheap one the last guy used.' },
   { name: 'Amelia C.', where: 'Wimberley, TX', body: 'Pre-purchase well inspection saved us $40k. They flagged a corroded casing the seller hadn’t disclosed and we walked. We’d call them again in a heartbeat.' },
   { name: 'Tom & Carla S.', where: 'Bandera, TX', body: 'Honest people. We had two other quotes that were $8k apart and HCWP came in the middle, explained why, and stuck to it. Five stars.' },
-  { name: 'Jorge M.', where: 'Boerne, TX', body: 'Pressure tank failed on a Saturday during a family reunion. They picked up the after-hours line and had us back in business by 3pm. Lifesavers.' },
+  { name: 'Jorge M.', where: 'Boerne, TX', body: 'Pressure tank failed on a Saturday during a family reunion. Submitted the form, they replied within ten minutes and had us back in business by 3pm. Lifesavers.' },
   { name: 'Rebecca W.', where: 'Burnet, TX', body: 'Installed a constant-pressure system on our long pipe run and finally — I have real water pressure in my upstairs shower for the first time in 12 years.' },
 ];
 

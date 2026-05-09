@@ -11,10 +11,10 @@ const URGENCY_LEVELS = [
   { v: 5, label: 'NO WATER — Emergency', tone: 'bg-rust border-rust text-bone' },
 ];
 
-export function QuoteForm({ defaultService, defaultLocation, compact = false }: { defaultService?: string; defaultLocation?: string; compact?: boolean }) {
+export function QuoteForm({ defaultService, defaultLocation, defaultUrgency, compact = false }: { defaultService?: string; defaultLocation?: string; defaultUrgency?: number; compact?: boolean }) {
   const [state, setState] = useState<'idle' | 'submitting' | 'success' | 'error'>('idle');
   const [errorMsg, setErrorMsg] = useState('');
-  const [urgency, setUrgency] = useState<number>(3);
+  const [urgency, setUrgency] = useState<number>(defaultUrgency && defaultUrgency >= 1 && defaultUrgency <= 5 ? defaultUrgency : 3);
 
   async function onSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
@@ -40,7 +40,7 @@ export function QuoteForm({ defaultService, defaultLocation, compact = false }: 
       });
       if (!res.ok) {
         const j = await res.json().catch(() => ({}));
-        throw new Error(j?.error || 'Something went wrong. Please call us.');
+        throw new Error(j?.error || 'Something went wrong. Please try again or email us.');
       }
       setState('success');
     } catch (err) {
@@ -60,11 +60,11 @@ export function QuoteForm({ defaultService, defaultLocation, compact = false }: 
             <h3 className="font-display text-2xl text-ink">Got it. We’re on it.</h3>
             <p className="mt-2 text-base text-ink/75">
               {urgency >= 4
-                ? 'Your request is flagged as urgent. Expect a callback in under 30 minutes during business hours, and within an hour after-hours.'
-                : 'Expect a callback within one business hour. If it’s urgent, call us at the number above.'}
+                ? 'Your request is flagged as urgent. Expect a reply via text or email in under 30 minutes during business hours.'
+                : 'Expect a reply via text or email within one business hour.'}
             </p>
             <p className="mt-3 text-sm text-ink/60">
-              No-water emergencies are always prioritized — call directly if a household has been dry for more than a few hours.
+              We work by text and email, not phone tag — keep an eye on your inbox and messages so we can lock in a time fast.
             </p>
           </div>
         </div>
@@ -140,7 +140,7 @@ export function QuoteForm({ defaultService, defaultLocation, compact = false }: 
       <button type="submit" disabled={state === 'submitting'} className="btn-primary mt-6 w-full sm:w-auto disabled:opacity-60">
         {state === 'submitting' ? 'Sending…' : 'Request Free Estimate'}
       </button>
-      <p className="mt-3 text-xs text-ink/55">By submitting, you agree we may text or call you about your request. We never share your info.</p>
+      <p className="mt-3 text-xs text-ink/55">By submitting, you agree we may text or email you about your request. We never share your info.</p>
     </form>
   );
 }

@@ -3,8 +3,10 @@ export const SITE = {
   legalName: 'Hill Country Well & Pump Co.',
   domain: 'hillcountrywellandpump.com',
   url: 'https://hillcountrywellandpump.com',
-  phone: process.env.NEXT_PUBLIC_PHONE || '(830) 555-0144',
-  phoneRaw: process.env.NEXT_PUBLIC_PHONE_RAW || '+18305550144',
+  // Text-only contact. We do not take phone calls — every request runs through the form
+  // (or an inbound SMS Twilio webhook → /api/sms-inbound → CRM).
+  textNumber: process.env.NEXT_PUBLIC_TEXT_NUMBER || '',
+  textNumberRaw: process.env.NEXT_PUBLIC_TEXT_NUMBER_RAW || '',
   email: process.env.NEXT_PUBLIC_EMAIL || 'info@hillcountrywellandpump.com',
   address: {
     street: '1402 Ranch Road 1376',
@@ -14,7 +16,7 @@ export const SITE = {
     country: 'US',
   },
   geo: { lat: 30.2752, lng: -98.8719 },
-  hours: 'Mon–Sat 7:00a–8:00p · 24/7 Emergency',
+  hours: 'Online 24/7 · Form responses within 1 business hour',
   founded: 1998,
   yearsInBusiness: new Date().getFullYear() - 1998,
   social: {

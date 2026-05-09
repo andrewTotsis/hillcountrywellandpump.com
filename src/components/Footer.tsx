@@ -19,7 +19,7 @@ export function Footer() {
             Family-owned water well drilling, pump install, and emergency service across the Texas Hill Country since {SITE.founded}. Licensed, insured, and answerable.
           </p>
           <div className="mt-6 space-y-2 text-sm text-bone/80">
-            <a href={`tel:${SITE.phoneRaw}`} className="block hover:text-rust">📞 {SITE.phone}</a>
+            <Link href="/quote" className="block hover:text-rust">→ Request a Free Estimate</Link>
             <a href={`mailto:${SITE.email}`} className="block hover:text-rust">✉ {SITE.email}</a>
             <p className="text-bone/60">{SITE.hours}</p>
           </div>

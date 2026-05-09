@@ -4,6 +4,15 @@ Production website for [hillcountrywellandpump.com](https://hillcountrywellandpu
 
 Built with **Next.js 15 (App Router)**, **Tailwind CSS**, and **Supabase** for lead intake.
 
+## Operating model — pay-per-lead, no phones
+
+This site is built for a **pay-per-lead** business with a hard rule: **no inbound phone calls**. There is no `tel:` link anywhere. Every CTA on the site routes to the lead form, and an optional inbound-SMS webhook converts text messages into leads with no human intermediary.
+
+- **Web form** → `POST /api/leads` → Supabase → `/admin`
+- **Inbound text** (optional, when a Twilio number is wired up) → `POST /api/sms-inbound` → same `leads` table → `/admin`
+
+Both paths emit identical lead records, so the CRM is one inbox.
+
 ## Stack
 
 - Next.js 15 / React 19 / TypeScript
@@ -28,9 +37,11 @@ Open <http://localhost:3000>.
 | Name | Purpose |
 |------|---------|
 | `NEXT_PUBLIC_SITE_URL` | Canonical site URL (e.g. `https://hillcountrywellandpump.com`) |
-| `NEXT_PUBLIC_PHONE` | Display phone (e.g. `(830) 555-0144`) |
-| `NEXT_PUBLIC_PHONE_RAW` | Tel-link phone (e.g. `+18305550144`) |
 | `NEXT_PUBLIC_EMAIL` | Display email |
+| `NEXT_PUBLIC_TEXT_NUMBER` *(optional)* | Display SMS-only number — only set if you wire up a Twilio number |
+| `NEXT_PUBLIC_TEXT_NUMBER_RAW` *(optional)* | E.164 SMS-only number for `sms:` links |
+| `TWILIO_AUTH_TOKEN` *(optional)* | Verifies Twilio webhook signatures on `/api/sms-inbound` |
+| `TWILIO_WEBHOOK_URL` *(optional)* | Override the URL used for Twilio signature verification (useful behind proxies) |
 | `SUPABASE_URL` | Server-side Supabase URL |
 | `SUPABASE_SERVICE_ROLE_KEY` | Server-side service role key (used by API routes & admin) |
 | `ADMIN_PASSWORD` | Strong password for `/admin/login` |
@@ -65,7 +76,20 @@ Sessions are signed HMAC cookies with a 12-hour TTL. Rotate `ADMIN_SESSION_SECRE
 - `/service-areas` and `/locations/[slug]`
 - `/about`, `/contact`, `/quote`, `/faq`, `/reviews`, `/financing`
 - `/admin`, `/admin/login`
-- `POST /api/leads`
+- `POST /api/leads` — form submissions
+- `POST /api/sms-inbound` — Twilio inbound-SMS webhook (drops texts straight into the CRM as leads)
+
+## Wiring up Twilio for SMS-to-CRM (optional)
+
+1. In Twilio, buy a number and enable Messaging.
+2. Phone Numbers → (your number) → "A MESSAGE COMES IN" → Webhook → `POST` → `https://hillcountrywellandpump.com/api/sms-inbound`.
+3. In Vercel env, set `TWILIO_AUTH_TOKEN` (from your Twilio Account → Auth Tokens) so the webhook verifies request signatures.
+4. (Optional) set `NEXT_PUBLIC_TEXT_NUMBER` and `NEXT_PUBLIC_TEXT_NUMBER_RAW` to surface a "Text us" link on the site.
+
+When a homeowner texts the number:
+- The webhook detects keywords (`emergency`, `no water`, `urgent`, `quote`, etc.) and assigns an urgency score 1–5.
+- A lead is inserted with `service: "inbound-sms"` and `source: "sms:<MessageSid>"`.
+- Twilio replies automatically with a confirmation TwiML message.
 
 ## Lead payload
 

@@ -8,8 +8,14 @@ export function LocalBusinessSchema() {
     name: SITE.legalName,
     alternateName: SITE.name,
     url: SITE.url,
-    telephone: SITE.phoneRaw,
     email: SITE.email,
+    contactPoint: {
+      '@type': 'ContactPoint',
+      contactType: 'customer service',
+      email: SITE.email,
+      availableLanguage: ['English'],
+      url: `${SITE.url}/quote`,
+    },
     image: `${SITE.url}/og.jpg`,
     priceRange: '$$',
     address: {

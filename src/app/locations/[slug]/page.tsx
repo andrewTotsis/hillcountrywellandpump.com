@@ -97,8 +97,8 @@ export default async function LocationPage({ params }: { params: Promise<{ slug:
             </ul>
           </div>
           <div>
-            <span className="eyebrow">Common homeowner calls</span>
-            <h2 className="h-section mt-3">What {l.city} owners call us for.</h2>
+            <span className="eyebrow">Common homeowner requests</span>
+            <h2 className="h-section mt-3">What {l.city} owners reach out about.</h2>
             <ul className="mt-6 grid gap-3">
               {l.homeownerProblems.map((p, i) => (
                 <li key={i} className="flex items-start gap-3 rounded-xl border border-ink/10 bg-bone p-4">

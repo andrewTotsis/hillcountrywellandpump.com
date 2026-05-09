@@ -28,6 +28,7 @@ export default function QuotePage() {
       <section className="section">
         <div className="container-narrow grid gap-10 lg:grid-cols-5 lg:items-start">
           <div className="lg:col-span-2 space-y-6">
+            <Block title="How we follow up" body="Text or email — never voicemail tag." />
             <Block title="Average response" body="Under one business hour." />
             <Block title="Emergency response" body="Same day, often within 2 hours." />
             <Block title="Free site visit" body="Always — no obligation." />
