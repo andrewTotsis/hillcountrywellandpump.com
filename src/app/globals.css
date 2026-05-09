@@ -1,0 +1,58 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: #F5F1EA;
+  --foreground: #1B1612;
+}
+
+html {
+  scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-feature-settings: 'kern', 'liga', 'calt';
+}
+
+/* Selection */
+::selection { background: #A8431E; color: #F5F1EA; }
+
+/* Buttons */
+.btn-primary {
+  @apply inline-flex items-center justify-center gap-2 rounded-md bg-rust px-6 py-3.5 text-base font-semibold text-bone shadow-rugged transition-all hover:bg-earth hover:shadow-deep active:translate-y-px focus:outline-none focus-visible:ring-2 focus-visible:ring-rust focus-visible:ring-offset-2 focus-visible:ring-offset-bone;
+}
+.btn-secondary {
+  @apply inline-flex items-center justify-center gap-2 rounded-md border-2 border-ink/80 bg-transparent px-6 py-3.5 text-base font-semibold text-ink transition-all hover:bg-ink hover:text-bone focus:outline-none focus-visible:ring-2 focus-visible:ring-ink;
+}
+.btn-emergency {
+  @apply inline-flex items-center justify-center gap-2 rounded-md bg-ink px-6 py-3.5 text-base font-semibold text-bone shadow-rugged transition-all hover:bg-slate;
+}
+
+/* Section frames */
+.section { @apply py-20 md:py-28; }
+.container-narrow { @apply mx-auto w-full max-w-6xl px-5 md:px-8; }
+.container-wide { @apply mx-auto w-full max-w-7xl px-5 md:px-8; }
+
+/* Headings */
+.h-display { @apply font-display text-4xl md:text-6xl leading-[1.05] tracking-tight text-ink; }
+.h-section { @apply font-display text-3xl md:text-5xl leading-[1.1] tracking-tight text-ink; }
+.eyebrow { @apply inline-flex items-center gap-2 text-xs md:text-sm font-semibold uppercase tracking-[0.18em] text-rust; }
+
+/* Form */
+.field {
+  @apply w-full rounded-md border border-ink/15 bg-white px-4 py-3 text-base text-ink shadow-sm placeholder:text-ink/40 focus:border-rust focus:outline-none focus:ring-2 focus:ring-rust/30;
+}
+.field-label {
+  @apply mb-1.5 block text-sm font-semibold text-ink;
+}
+
+/* Hero overlay gradient */
+.hero-grad {
+  background:
+    linear-gradient(180deg, rgba(27,22,18,0.65) 0%, rgba(27,22,18,0.55) 35%, rgba(27,22,18,0.78) 100%),
+    radial-gradient(1200px 600px at 70% 20%, rgba(168,67,30,0.35), transparent 60%);
+}

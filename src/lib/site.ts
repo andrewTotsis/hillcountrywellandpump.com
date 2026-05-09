@@ -1,0 +1,48 @@
+export const SITE = {
+  name: 'Hill Country Well & Pump',
+  legalName: 'Hill Country Well & Pump Co.',
+  domain: 'hillcountrywellandpump.com',
+  url: 'https://hillcountrywellandpump.com',
+  phone: process.env.NEXT_PUBLIC_PHONE || '(830) 555-0144',
+  phoneRaw: process.env.NEXT_PUBLIC_PHONE_RAW || '+18305550144',
+  email: process.env.NEXT_PUBLIC_EMAIL || 'info@hillcountrywellandpump.com',
+  address: {
+    street: '1402 Ranch Road 1376',
+    city: 'Fredericksburg',
+    region: 'TX',
+    postalCode: '78624',
+    country: 'US',
+  },
+  geo: { lat: 30.2752, lng: -98.8719 },
+  hours: 'Mon–Sat 7:00a–8:00p · 24/7 Emergency',
+  founded: 1998,
+  yearsInBusiness: new Date().getFullYear() - 1998,
+  social: {
+    facebook: 'https://www.facebook.com/hillcountrywellandpump',
+    google: 'https://g.page/hillcountrywellandpump',
+  },
+  serviceAreas: [
+    'Fredericksburg',
+    'Marble Falls',
+    'Boerne',
+    'Dripping Springs',
+    'Burnet County',
+    'Blanco County',
+    'Kerrville',
+    'Johnson City',
+    'Wimberley',
+    'Llano',
+    'Mason',
+    'Comfort',
+    'Bandera',
+  ],
+};
+
+export const NAV_PRIMARY = [
+  { label: 'Services', href: '/services' },
+  { label: 'Service Area', href: '/service-areas' },
+  { label: 'About', href: '/about' },
+  { label: 'FAQ', href: '/faq' },
+  { label: 'Reviews', href: '/reviews' },
+  { label: 'Contact', href: '/contact' },
+];
