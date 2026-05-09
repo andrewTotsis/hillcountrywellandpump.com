@@ -20,7 +20,7 @@ export function Footer() {
           </p>
           <div className="mt-6 space-y-2 text-sm text-bone/80">
             <Link href="/quote" className="block hover:text-rust">→ Request a Free Estimate</Link>
-            <a href={`mailto:${SITE.email}`} className="block hover:text-rust">✉ {SITE.email}</a>
+            <Link href="/contact" className="block hover:text-rust">✉ Send a message</Link>
             <p className="text-bone/60">{SITE.hours}</p>
           </div>
         </div>

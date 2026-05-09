@@ -1,4 +1,4 @@
-import type { LeadRecord } from './supabase';
+import type { LeadRecord } from './db';
 
 const memory: LeadRecord[] = [];
 

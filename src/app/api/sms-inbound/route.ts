@@ -1,6 +1,6 @@
 import { NextResponse } from 'next/server';
 import crypto from 'crypto';
-import { getSupabaseAdmin, type LeadRecord } from '@/lib/supabase';
+import { insertLead, type LeadRecord } from '@/lib/db';
 import { pushMemoryLead } from '@/lib/leads-memory';
 
 export const runtime = 'nodejs';
@@ -15,7 +15,7 @@ export const runtime = 'nodejs';
 // Set TWILIO_AUTH_TOKEN in your env to verify request signatures.
 // (If unset, requests are still accepted but logged as unverified — fine for dev.)
 
-function verifyTwilioSignature(req: Request, rawBody: string, params: URLSearchParams): boolean {
+function verifyTwilioSignature(req: Request, _rawBody: string, params: URLSearchParams): boolean {
   const token = process.env.TWILIO_AUTH_TOKEN;
   if (!token) return true; // signature not enforced
   const signature = req.headers.get('x-twilio-signature');
@@ -79,16 +79,8 @@ export async function POST(req: Request) {
     created_at: new Date().toISOString(),
   };
 
-  const supabase = getSupabaseAdmin();
-  if (supabase) {
-    const { error } = await supabase.from('leads').insert(record);
-    if (error) {
-      console.error('[sms-inbound] supabase insert failed', error);
-      pushMemoryLead(record);
-    }
-  } else {
-    pushMemoryLead(record);
-  }
+  const result = await insertLead(record);
+  if (!result.ok) pushMemoryLead(record);
 
   // Reply with TwiML — Twilio sends this back to the texter.
   const reply = urgency >= 4

@@ -1,7 +1,7 @@
 import type { Metadata } from 'next';
 import { redirect } from 'next/navigation';
 import { isAuthed, logout } from '@/lib/admin';
-import { getSupabaseAdmin, type LeadRecord } from '@/lib/supabase';
+import { listLeads, getDb, type LeadRecord } from '@/lib/db';
 import { getMemoryLeads } from '@/lib/leads-memory';
 
 export const metadata: Metadata = {
@@ -11,18 +11,13 @@ export const metadata: Metadata = {
 export const dynamic = 'force-dynamic';
 
 async function fetchLeads(): Promise<LeadRecord[]> {
-  const supabase = getSupabaseAdmin();
-  if (!supabase) return getMemoryLeads();
-  const { data, error } = await supabase
-    .from('leads')
-    .select('*')
-    .order('created_at', { ascending: false })
-    .limit(500);
-  if (error) {
-    console.error('[admin] supabase fetch failed', error);
-    return getMemoryLeads();
+  if (!getDb()) return getMemoryLeads();
+  const rows = await listLeads(500);
+  if (rows.length === 0) {
+    const mem = getMemoryLeads();
+    if (mem.length) return mem;
   }
-  return (data ?? []) as LeadRecord[];
+  return rows;
 }
 
 async function signOut() {
@@ -42,6 +37,7 @@ const URGENCY_LABEL: Record<number, { label: string; tone: string }> = {
 export default async function AdminPage() {
   if (!(await isAuthed())) redirect('/admin/login');
   const leads = await fetchLeads();
+  const persistent = Boolean(getDb());
   const stats = {
     total: leads.length,
     new: leads.filter((l) => (l.status || 'new') === 'new').length,
@@ -55,7 +51,13 @@ export default async function AdminPage() {
         <div className="container-wide flex items-center justify-between py-5">
           <div>
             <h1 className="font-display text-2xl text-ink">Lead Inbox</h1>
-            <p className="text-xs text-ink/55">Hill Country Well &amp; Pump · Admin</p>
+            <p className="text-xs text-ink/55">
+              Hill Country Well &amp; Pump · Admin
+              <span className={`ml-2 inline-flex items-center gap-1 rounded-full px-2 py-0.5 text-[10px] font-bold uppercase tracking-wide ${persistent ? 'bg-sage/15 text-sage' : 'bg-rust/15 text-rust'}`}>
+                <span className={`h-1.5 w-1.5 rounded-full ${persistent ? 'bg-sage' : 'bg-rust'}`} />
+                {persistent ? 'Persistent · Neon Postgres' : 'In-memory only'}
+              </span>
+            </p>
           </div>
           <form action={signOut}>
             <button className="btn-secondary !py-2 !px-4 !text-sm">Sign Out</button>
@@ -99,7 +101,7 @@ export default async function AdminPage() {
                       <Td>{l.created_at ? new Date(l.created_at).toLocaleString() : '—'}</Td>
                       <Td><span className={`inline-flex items-center rounded-full border px-2 py-0.5 text-[11px] font-bold uppercase tracking-wide ${u.tone}`}>{l.urgency} · {u.label}</span></Td>
                       <Td className="font-semibold text-ink">{l.full_name}</Td>
-                      <Td><a className="text-rust hover:underline" href={`tel:+1${phoneDigits}`}>{l.phone}</a></Td>
+                      <Td><a className="text-rust hover:underline" href={`sms:+1${phoneDigits}`}>{l.phone}</a></Td>
                       <Td><a className="text-rust hover:underline break-all" href={`mailto:${l.email}`}>{l.email}</a></Td>
                       <Td>{l.service}</Td>
                       <Td>{l.property_location}</Td>
@@ -112,12 +114,6 @@ export default async function AdminPage() {
             </table>
           </div>
         </div>
-
-        {!getSupabaseAdmin() && (
-          <p className="mt-6 text-xs text-ink/55">
-            Note: Supabase env vars not configured — leads are currently in-memory and will reset on deploy. Set <code className="rounded bg-white px-1 py-0.5 border border-ink/10">SUPABASE_URL</code> and <code className="rounded bg-white px-1 py-0.5 border border-ink/10">SUPABASE_SERVICE_ROLE_KEY</code> in Vercel env to enable persistence.
-          </p>
-        )}
       </div>
     </section>
   );

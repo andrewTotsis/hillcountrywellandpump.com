@@ -1,5 +1,5 @@
 import { NextResponse } from 'next/server';
-import { getSupabaseAdmin, type LeadRecord } from '@/lib/supabase';
+import { insertLead, type LeadRecord } from '@/lib/db';
 import { pushMemoryLead } from '@/lib/leads-memory';
 
 export const runtime = 'nodejs';
@@ -50,16 +50,10 @@ export async function POST(req: Request) {
     created_at: new Date().toISOString(),
   };
 
-  const supabase = getSupabaseAdmin();
-  if (supabase) {
-    const { error } = await supabase.from('leads').insert(record);
-    if (error) {
-      console.error('[leads] supabase insert failed', error);
-      pushMemoryLead(record);
-    }
-  } else {
+  const result = await insertLead(record);
+  if (!result.ok) {
+    console.warn('[leads] DB insert unavailable, falling back to memory:', result.error);
     pushMemoryLead(record);
-    console.log('[leads] (no supabase configured) lead captured:', JSON.stringify(record));
   }
 
   return NextResponse.json({ ok: true, urgency, prioritized: urgency >= 4 });

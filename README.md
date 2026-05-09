@@ -2,13 +2,13 @@
 
 Production website for [hillcountrywellandpump.com](https://hillcountrywellandpump.com) — a Texas Hill Country water well drilling and pump service business.
 
-Built with **Next.js 15 (App Router)**, **Tailwind CSS**, and **Supabase** for lead intake.
+Built with **Next.js 15 (App Router)**, **Tailwind CSS**, and **Neon Postgres** for lead intake.
 
 ## Operating model — pay-per-lead, no phones
 
 This site is built for a **pay-per-lead** business with a hard rule: **no inbound phone calls**. There is no `tel:` link anywhere. Every CTA on the site routes to the lead form, and an optional inbound-SMS webhook converts text messages into leads with no human intermediary.
 
-- **Web form** → `POST /api/leads` → Supabase → `/admin`
+- **Web form** → `POST /api/leads` → Neon Postgres → `/admin`
 - **Inbound text** (optional, when a Twilio number is wired up) → `POST /api/sms-inbound` → same `leads` table → `/admin`
 
 Both paths emit identical lead records, so the CRM is one inbox.
@@ -17,7 +17,7 @@ Both paths emit identical lead records, so the CRM is one inbox.
 
 - Next.js 15 / React 19 / TypeScript
 - Tailwind CSS
-- Supabase (Postgres) for lead persistence
+- Neon Postgres (Postgres) for lead persistence
 - Deployed on Vercel
 - LocalBusiness, FAQPage, Service, Breadcrumb JSON-LD schema
 - Sitemap + robots, full metadata
@@ -42,18 +42,26 @@ Open <http://localhost:3000>.
 | `NEXT_PUBLIC_TEXT_NUMBER_RAW` *(optional)* | E.164 SMS-only number for `sms:` links |
 | `TWILIO_AUTH_TOKEN` *(optional)* | Verifies Twilio webhook signatures on `/api/sms-inbound` |
 | `TWILIO_WEBHOOK_URL` *(optional)* | Override the URL used for Twilio signature verification (useful behind proxies) |
-| `SUPABASE_URL` | Server-side Supabase URL |
-| `SUPABASE_SERVICE_ROLE_KEY` | Server-side service role key (used by API routes & admin) |
+| `DATABASE_URL` | Neon Postgres connection string (auto-set by Vercel marketplace integration) |
 | `ADMIN_PASSWORD` | Strong password for `/admin/login` |
 | `ADMIN_SESSION_SECRET` | 32+ byte random string for signing the admin session cookie |
 
-If Supabase env vars are missing, leads are captured to an in-memory store (resets on deploy). Always configure Supabase for production.
+If Neon Postgres env vars are missing, leads are captured to an in-memory store (resets on deploy). Always configure Neon Postgres for production.
 
-## Supabase setup
+## Database setup (Neon Postgres)
 
-1. Create a Supabase project.
-2. In the SQL editor, run [`supabase/schema.sql`](./supabase/schema.sql).
-3. Copy the project URL and **service-role** key into your Vercel env vars.
+The DB is provisioned through Vercel's marketplace integration (no separate Neon account):
+
+```bash
+vercel integration add neon --plan free_v3 --metadata region=iad1 --metadata auth=false --non-interactive
+```
+
+That auto-injects all the `DATABASE_URL` / `POSTGRES_*` env vars into the project. Then create the `leads` table:
+
+```bash
+vercel env pull .env.local
+node scripts/migrate.mjs
+```
 
 ## Admin / CRM
 

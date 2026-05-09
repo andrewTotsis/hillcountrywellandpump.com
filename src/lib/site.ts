@@ -7,7 +7,7 @@ export const SITE = {
   // (or an inbound SMS Twilio webhook → /api/sms-inbound → CRM).
   textNumber: process.env.NEXT_PUBLIC_TEXT_NUMBER || '',
   textNumberRaw: process.env.NEXT_PUBLIC_TEXT_NUMBER_RAW || '',
-  email: process.env.NEXT_PUBLIC_EMAIL || 'info@hillcountrywellandpump.com',
+  email: process.env.NEXT_PUBLIC_EMAIL || 'hillcountrywellandpump@gmail.com',
   address: {
     street: '1402 Ranch Road 1376',
     city: 'Fredericksburg',
