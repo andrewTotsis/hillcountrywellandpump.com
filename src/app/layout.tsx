@@ -19,7 +19,7 @@ export const metadata: Metadata = {
     template: '%s | Hill Country Well & Pump',
   },
   description:
-    'Licensed water well drilling, pump install, and emergency service across the Texas Hill Country — Fredericksburg, Boerne, Marble Falls, Dripping Springs. Family-owned. Free estimates.',
+    'Water well drilling, pump install, and emergency service across the Texas Hill Country — Fredericksburg, Boerne, Marble Falls, Dripping Springs. Family-run. Free estimates.',
   applicationName: SITE.name,
   authors: [{ name: SITE.legalName }],
   alternates: { canonical: '/' },
@@ -28,7 +28,7 @@ export const metadata: Metadata = {
     siteName: SITE.name,
     title: 'Well Drilling Texas Hill Country | Hill Country Well & Pump',
     description:
-      'Licensed water well drilling, pump install, and emergency service across the Texas Hill Country.',
+      'Water well drilling, pump install, and emergency service across the Texas Hill Country.',
     url: SITE.url,
     locale: 'en_US',
   },

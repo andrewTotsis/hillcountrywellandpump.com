@@ -44,8 +44,8 @@ export const LOCATIONS: Location[] = [
     ],
     zip: ['78624', '78671', '78675'],
     meta: {
-      title: 'Well Drilling Fredericksburg TX | Licensed Driller | Hill Country Well & Pump',
-      description: 'Water well drilling, pump install, and emergency service in Fredericksburg, TX. Hickory aquifer specialists. Licensed, insured, family-owned. Free site visits.',
+      title: 'Well Drilling Fredericksburg TX | Hill Country Well & Pump',
+      description: 'Water well drilling, pump install, and emergency service in Fredericksburg, TX. Hickory aquifer specialists. Family-run, insured. Free site visits.',
     },
   },
   {
@@ -76,7 +76,7 @@ export const LOCATIONS: Location[] = [
     zip: ['78654', '78657'],
     meta: {
       title: 'Well Drilling Marble Falls TX | Pump Repair | Hill Country Well & Pump',
-      description: 'Well drilling, pump repair, and emergency service in Marble Falls, TX. Trinity aquifer experience. Same-day dispatch. Licensed, insured, family-owned.',
+      description: 'Well drilling, pump repair, and emergency service in Marble Falls, TX. Trinity aquifer experience. Same-day dispatch. Family-run, insured.',
     },
   },
   {
@@ -107,7 +107,7 @@ export const LOCATIONS: Location[] = [
     zip: ['78006', '78015'],
     meta: {
       title: 'Well Drilling Boerne TX | Trinity Aquifer | Hill Country Well & Pump',
-      description: 'Water well drilling, pump install, and emergency service in Boerne, TX. Trinity aquifer specialists. Licensed, insured, family-owned. Free site visits.',
+      description: 'Water well drilling, pump install, and emergency service in Boerne, TX. Trinity aquifer specialists. Family-run, insured. Free site visits.',
     },
   },
   {
@@ -138,7 +138,7 @@ export const LOCATIONS: Location[] = [
     zip: ['78620'],
     meta: {
       title: 'Well Drilling Dripping Springs TX | Hill Country Well & Pump',
-      description: 'Water well drilling, pump install, and emergency service in Dripping Springs, TX. Trinity aquifer experience across the U.S. 290 growth corridor. Licensed, insured.',
+      description: 'Water well drilling, pump install, and emergency service in Dripping Springs, TX. Trinity aquifer experience across the U.S. 290 growth corridor. Family-run, insured.',
     },
   },
   {
@@ -169,7 +169,7 @@ export const LOCATIONS: Location[] = [
     zip: ['78611', '78605', '78654', '78657', '78639'],
     meta: {
       title: 'Well Drilling Burnet County TX | Hill Country Well & Pump',
-      description: 'Water well drilling, pump install, and 24/7 service across Burnet County, TX. Trinity, Ellenburger, and Hickory experience. Licensed, insured, family-owned.',
+      description: 'Water well drilling, pump install, and 24/7 service across Burnet County, TX. Trinity, Ellenburger, and Hickory experience. Family-run, insured.',
     },
   },
   {
@@ -200,7 +200,7 @@ export const LOCATIONS: Location[] = [
     zip: ['78606', '78636', '78663'],
     meta: {
       title: 'Well Drilling Blanco County TX | Ranch & Residential | Hill Country Well & Pump',
-      description: 'Water well drilling, pump install, and emergency service in Blanco County, TX. Ranch and residential. Trinity aquifer experience. Licensed, insured.',
+      description: 'Water well drilling, pump install, and emergency service in Blanco County, TX. Ranch and residential. Trinity aquifer experience. Family-run, insured.',
     },
   },
 ];

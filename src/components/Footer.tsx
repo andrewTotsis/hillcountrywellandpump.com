@@ -16,7 +16,7 @@ export function Footer() {
             </span>
           </div>
           <p className="mt-5 text-sm leading-relaxed text-bone/70">
-            Family-owned water well drilling, pump install, and emergency service across the Texas Hill Country since {SITE.founded}. Licensed, insured, and answerable.
+            Texas Hill Country water well services — drilling, pump install, and emergency well work. Family-run and insured.
           </p>
           <div className="mt-6 space-y-2 text-sm text-bone/80">
             <Link href="/quote" className="block hover:text-rust">→ Request a Free Estimate</Link>
@@ -61,9 +61,9 @@ export function Footer() {
       </div>
 
       <div className="border-t border-bone/10">
-        <div className="container-wide flex flex-col gap-3 py-6 text-xs text-bone/60 md:flex-row md:items-center md:justify-between">
-          <p>© {new Date().getFullYear()} {SITE.legalName}. Licensed Texas Water Well Driller. Insured.</p>
-          <p>Serving Fredericksburg · Boerne · Marble Falls · Dripping Springs · Burnet &amp; Blanco Counties</p>
+        <div className="container-wide flex flex-col gap-3 py-6 text-[11px] leading-relaxed text-bone/55 md:flex-row md:items-start md:justify-between">
+          <p className="max-w-2xl">© {new Date().getFullYear()} {SITE.legalName}. Hill Country Well &amp; Pump connects Texas Hill Country homeowners with water well drilling and pump services from licensed local drillers in our network. All work is performed by licensed professionals.</p>
+          <p className="md:text-right">Serving Fredericksburg · Boerne · Marble Falls · Dripping Springs · Burnet &amp; Blanco Counties</p>
         </div>
       </div>
     </footer>

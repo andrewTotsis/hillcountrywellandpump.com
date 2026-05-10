@@ -25,13 +25,13 @@ export const SERVICES: Service[] = [
     ],
     process: [
       { title: 'Site evaluation', body: 'On-site visit to evaluate geology, easements, and proximity to septic. We pull regional aquifer data for the Trinity, Edwards, and Hickory.' },
-      { title: 'Permits & state filings', body: 'We handle TDLR Driller Reports and county groundwater conservation district permits start to finish.' },
+      { title: 'Permits & state filings', body: 'We coordinate TDLR Driller Reports and county groundwater conservation district permits start to finish.' },
       { title: 'Drilling', body: 'Air rotary or mud rotary depending on formation. Steel surface casing, sealed annulus, and PVC liner sized for your demand.' },
       { title: 'Yield test & water sample', body: 'We bail and test gallons-per-minute, then pull a water sample for bacterial and mineral analysis before you commit to a pump.' },
     ],
     trust: [
-      'Licensed Texas Water Well Driller',
-      'TDLR-compliant casing and grouting',
+      'Work performed by licensed Texas drillers',
+      'Code-compliant casing and grouting',
       'Honest go/no-go before you spend on a pump',
       'Written yield test results',
     ],
@@ -41,8 +41,8 @@ export const SERVICES: Service[] = [
       { q: 'Do you guarantee water?', a: 'No reputable driller can guarantee water at a specific depth — geology decides. What we guarantee is honest reporting at every 20 feet so you can stop, continue, or move the rig before you over-spend.' },
     ],
     meta: {
-      title: 'Well Drilling Texas Hill Country | Licensed Driller | Hill Country Well & Pump',
-      description: 'Licensed water well drilling across the Texas Hill Country — Fredericksburg, Boerne, Marble Falls, Dripping Springs. Trinity, Edwards & Hickory aquifer experience. Free site visit.',
+      title: 'Well Drilling Texas Hill Country | Hill Country Well & Pump',
+      description: 'Water well drilling across the Texas Hill Country — Fredericksburg, Boerne, Marble Falls, Dripping Springs. Trinity, Edwards & Hickory aquifer experience. Free site visit.',
     },
   },
   {
@@ -63,8 +63,8 @@ export const SERVICES: Service[] = [
       { title: 'Disinfection & startup', body: 'Chlorination, flush, pressure test, and a walkthrough so you know how to read your system.' },
     ],
     trust: [
-      'Top-tier Franklin / Grundfos / Goulds equipment only',
-      '5-year workmanship warranty',
+      'Top-tier Franklin / Grundfos / Goulds equipment',
+      'Workmanship guaranteed',
       'Written system specs you keep',
     ],
     faqs: [
@@ -103,7 +103,7 @@ export const SERVICES: Service[] = [
     ],
     meta: {
       title: 'Well Pump Repair Texas Hill Country | Same-Day Service | Hill Country Well & Pump',
-      description: 'Same-day well pump repair across Fredericksburg, Boerne, Marble Falls and the Texas Hill Country. Licensed, insured, no-water emergency service available.',
+      description: 'Same-day well pump repair across Fredericksburg, Boerne, Marble Falls and the Texas Hill Country. Family-run, insured, no-water emergency service available.',
     },
   },
   {
@@ -129,7 +129,7 @@ export const SERVICES: Service[] = [
     ],
     meta: {
       title: 'Emergency No-Water Service Texas Hill Country | 24/7 | Hill Country Well & Pump',
-      description: '24/7 emergency no-water service across the Texas Hill Country. Same-day dispatch. Submit an emergency request and skip the queue. Licensed, insured.',
+      description: '24/7 emergency no-water service across the Texas Hill Country. Same-day dispatch. Submit an emergency request and skip the queue. Family-run, insured.',
     },
   },
   {
@@ -227,7 +227,7 @@ export const SERVICES: Service[] = [
     ],
     meta: {
       title: 'Residential Wells Texas Hill Country | Family Home Water | Hill Country Well & Pump',
-      description: 'Residential water well drilling, install, and repair across the Texas Hill Country. Sized for your real family demand. Licensed, insured, family-owned.',
+      description: 'Residential water well drilling, install, and repair across the Texas Hill Country. Sized for your real family demand. Family-run, insured.',
     },
   },
 ];

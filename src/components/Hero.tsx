@@ -1,5 +1,4 @@
 import Link from 'next/link';
-import { SITE } from '@/lib/site';
 
 export function Hero() {
   return (
@@ -21,7 +20,7 @@ export function Hero() {
           Texas Hill Country Water Wells, <span className="text-rust">Done Right.</span>
         </h1>
         <p className="max-w-2xl text-lg md:text-xl text-bone/85 leading-relaxed animate-fade-up">
-          Licensed water well drilling, pump install, and emergency service across Fredericksburg, Boerne, Marble Falls, and the Hill Country since {SITE.founded}. Family-owned. Honest about what your property needs — and what it doesn’t.
+          Water well drilling, pump install, and emergency service across Fredericksburg, Boerne, Marble Falls, and the Hill Country. Family-run. Honest about what your property needs — and what it doesn’t.
         </p>
         <div className="flex flex-wrap items-center gap-3 animate-fade-up">
           <Link href="/quote" className="btn-primary text-base">Request a Free Estimate</Link>
@@ -36,10 +35,10 @@ export function Hero() {
         <p className="text-xs text-bone/65">No phone tag. Submit the form and we respond fast — typically inside one business hour.</p>
 
         <div className="flex flex-wrap items-center gap-x-8 gap-y-3 pt-4 text-sm text-bone/80">
-          <span className="flex items-center gap-2"><Dot /> Licensed Texas Water Well Driller</span>
-          <span className="flex items-center gap-2"><Dot /> Family-Owned Since {SITE.founded}</span>
-          <span className="flex items-center gap-2"><Dot /> Same-Day Pump Service</span>
-          <span className="flex items-center gap-2"><Dot /> Financing Available</span>
+          <span className="flex items-center gap-2"><Dot /> Hill Country focused</span>
+          <span className="flex items-center gap-2"><Dot /> Family-run &amp; insured</span>
+          <span className="flex items-center gap-2"><Dot /> Same-day pump service</span>
+          <span className="flex items-center gap-2"><Dot /> Financing available</span>
         </div>
       </div>
     </section>

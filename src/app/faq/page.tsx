@@ -21,7 +21,7 @@ const FAQS = [
   { q: 'How often should I test my well water?', a: 'Annually for bacteria and nitrates. Every 3 years for the full mineral and metals panel. After any flooding event or septic work.' },
   { q: 'Do I need a permit for a well in the Hill Country?', a: 'Yes, in every county we serve. Counties have groundwater conservation districts that require registration and a drilling permit. We handle the paperwork.' },
   { q: 'Is financing available?', a: 'Yes — we partner with lenders who finance water systems specifically. Most homeowners qualify for monthly payments.' },
-  { q: 'Are you licensed and insured?', a: 'Yes — licensed Texas Water Well Driller and fully insured. Documentation is provided with every install.' },
+  { q: 'Are you licensed and insured?', a: 'All drilling work in our network is performed by licensed Texas water well drillers, and we’re fully insured. License and insurance documentation is provided before any work begins on your property.' },
   { q: 'What is your emergency response time?', a: 'Same-day in most of the Hill Country during business hours. After-hours, typically a same-evening visit for true no-water emergencies.' },
 ];
 

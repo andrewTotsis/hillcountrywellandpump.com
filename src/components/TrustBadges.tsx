@@ -1,10 +1,10 @@
 export function TrustBadges() {
   const items = [
-    { label: 'Licensed Texas\nWater Well Driller', icon: <ShieldIcon /> },
-    { label: 'Family-Owned\nSince 1998', icon: <HouseIcon /> },
+    { label: 'Texas Hill Country\nfocused', icon: <ShieldIcon /> },
+    { label: 'Family-Run\n& Insured', icon: <HouseIcon /> },
     { label: '24/7 Emergency\nNo-Water Service', icon: <BoltIcon /> },
     { label: 'Financing\nAvailable', icon: <CardIcon /> },
-    { label: '5-Year\nWorkmanship Warranty', icon: <CheckIcon /> },
+    { label: 'Workmanship\nGuaranteed', icon: <CheckIcon /> },
   ];
   return (
     <div className="grid grid-cols-2 gap-3 md:grid-cols-5 md:gap-4">

@@ -8,7 +8,7 @@ import { QuoteFormWrapper } from './QuoteFormWrapper';
 export const metadata: Metadata = {
   title: 'Free Estimate | Texas Hill Country Well & Pump',
   description:
-    'Request a free water well or pump estimate from a licensed Texas Hill Country driller. Same-day response. Emergency requests prioritized.',
+    'Request a free water well or pump estimate from a Texas Hill Country driller. Same-day response. Emergency requests prioritized.',
   alternates: { canonical: '/quote' },
 };
 
@@ -33,7 +33,7 @@ export default function QuotePage() {
             <Block title="Emergency response" body="Same day, often within 2 hours." />
             <Block title="Free site visit" body="Always — no obligation." />
             <Block title="Financing" body="Available — most homeowners qualify." />
-            <Block title="Licensed & insured" body="Texas Water Well Driller. Documentation provided." />
+            <Block title="Licensed & insured" body="Work performed by licensed Texas drillers. Documentation provided." />
           </div>
           <div className="lg:col-span-3">
             <Suspense fallback={<QuoteForm />}>

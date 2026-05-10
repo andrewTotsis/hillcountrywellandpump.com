@@ -17,7 +17,7 @@ export default function ServicesIndex() {
       <section className="border-b border-ink/10 bg-bone">
         <div className="container-wide py-16 md:py-24">
           <span className="eyebrow">Services</span>
-          <h1 className="h-display mt-3 max-w-3xl">Everything you need from one licensed crew.</h1>
+          <h1 className="h-display mt-3 max-w-3xl">Everything you need from one local crew.</h1>
           <p className="mt-5 max-w-2xl text-lg text-ink/70">
             Drilling. Pump install. Repair. Inspections. Water testing. Emergency response. We don’t hand you off — the same team that drills your well comes back for the lifetime of the system.
           </p>

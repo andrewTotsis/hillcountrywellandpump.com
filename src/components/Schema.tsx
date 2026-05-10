@@ -1,14 +1,23 @@
 import { SITE } from '@/lib/site';
 
+// Service-area business — no fixed postal address, no telephone, no fabricated review counts.
+// This is the schema pattern Google uses for trades that travel to the customer.
 export function LocalBusinessSchema() {
   const data = {
     '@context': 'https://schema.org',
-    '@type': 'Plumber',
+    '@type': 'LocalBusiness',
     '@id': `${SITE.url}/#localbusiness`,
     name: SITE.legalName,
     alternateName: SITE.name,
     url: SITE.url,
     email: SITE.email,
+    image: `${SITE.url}/og.jpg`,
+    priceRange: '$$',
+    areaServed: {
+      '@type': 'AdministrativeArea',
+      name: SITE.serviceRegion.name,
+    },
+    serviceArea: SITE.serviceAreas.map((name) => ({ '@type': 'City', name })),
     contactPoint: {
       '@type': 'ContactPoint',
       contactType: 'customer service',
@@ -16,34 +25,8 @@ export function LocalBusinessSchema() {
       availableLanguage: ['English'],
       url: `${SITE.url}/quote`,
     },
-    image: `${SITE.url}/og.jpg`,
-    priceRange: '$$',
-    address: {
-      '@type': 'PostalAddress',
-      streetAddress: SITE.address.street,
-      addressLocality: SITE.address.city,
-      addressRegion: SITE.address.region,
-      postalCode: SITE.address.postalCode,
-      addressCountry: SITE.address.country,
-    },
-    geo: {
-      '@type': 'GeoCoordinates',
-      latitude: SITE.geo.lat,
-      longitude: SITE.geo.lng,
-    },
-    areaServed: SITE.serviceAreas.map((name) => ({ '@type': 'City', name })),
-    openingHoursSpecification: [
-      { '@type': 'OpeningHoursSpecification', dayOfWeek: ['Monday','Tuesday','Wednesday','Thursday','Friday','Saturday'], opens: '07:00', closes: '20:00' },
-    ],
-    sameAs: [SITE.social.facebook, SITE.social.google].filter(Boolean),
-    foundingDate: String(SITE.founded),
     description:
-      'Licensed water well drilling, pump installation, and 24/7 emergency well service across the Texas Hill Country.',
-    aggregateRating: {
-      '@type': 'AggregateRating',
-      ratingValue: '4.9',
-      reviewCount: '187',
-    },
+      'Connecting Texas Hill Country homeowners with water well drilling, pump install, and emergency well services.',
   };
 
   return (

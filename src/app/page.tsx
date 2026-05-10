@@ -13,11 +13,11 @@ import type { Metadata } from 'next';
 export const metadata: Metadata = {
   title: 'Well Drilling Texas Hill Country | Hill Country Well & Pump',
   description:
-    'Family-owned, licensed water well drilling and pump service across the Texas Hill Country since 1998. Fredericksburg, Boerne, Marble Falls, Dripping Springs. Free estimates. 24/7 no-water emergency.',
+    'Family-run water well drilling and pump service across the Texas Hill Country. Fredericksburg, Boerne, Marble Falls, Dripping Springs. Free estimates. 24/7 no-water emergency.',
   alternates: { canonical: '/' },
   openGraph: {
     title: 'Well Drilling Texas Hill Country | Hill Country Well & Pump',
-    description: 'Licensed water well drilling, pump install, and emergency service across the Texas Hill Country.',
+    description: 'Water well drilling, pump install, and emergency service across the Texas Hill Country.',
     url: '/',
     type: 'website',
   },
@@ -31,7 +31,7 @@ const HOMEPAGE_FAQS = [
   { q: 'How is a residential well different from an agricultural well?', a: 'A residential well is sized for fixture count — bathrooms, washing machines, an outside hose. An ag well is sized for sustained livestock or irrigation demand and usually has a larger pump, larger pressure tank or buffer storage, and heavier electrical service.' },
   { q: 'Why does my water pressure keep dropping?', a: 'Most pressure problems trace to a waterlogged pressure tank, a failing pressure switch, scale buildup in the pipes, or a pump that’s losing performance. We diagnose pressure problems systematically — pressure switch, tank pre-charge, amp draw, drawdown — before recommending any repair.' },
   { q: 'How often should I have my well maintained?', a: 'Annual: water test (bacterial + nitrates), pressure tank pre-charge check, sanitary cap inspection. Every 3–5 years: full mineral and metals panel, amp draw and insulation test on the pump.' },
-  { q: 'Are you licensed and insured?', a: 'Yes — licensed Texas Water Well Driller and fully insured. Documentation available on request and included with every install.' },
+  { q: 'Are you licensed and insured?', a: 'All drilling work in our network is performed by licensed Texas water well drillers, and we’re fully insured. License and insurance documentation is provided before any work begins on your property.' },
 ];
 
 export default function HomePage() {
@@ -50,10 +50,10 @@ export default function HomePage() {
       <section className="section">
         <div className="container-narrow grid gap-12 md:grid-cols-2 md:items-center">
           <div>
-            <span className="eyebrow">Family-Owned · Licensed · Insured</span>
+            <span className="eyebrow">Family-Run · Insured · Hill Country focused</span>
             <h2 className="h-section mt-3">Hill Country water is different. We drill it like it.</h2>
             <p className="mt-5 text-base md:text-lg leading-relaxed text-ink/75">
-              Limestone, granite, fractured Trinity, deep Hickory — every county in the Texas Hill Country has its own geology. We’ve drilled across Gillespie, Kendall, Burnet, Blanco, and Hays for over two decades. That means we don’t guess at depth. We pull the regional driller reports for your specific section before we ever roll a rig.
+              Limestone, granite, fractured Trinity, deep Hickory — every county in the Texas Hill Country has its own geology. We work across Gillespie, Kendall, Burnet, Blanco, and Hays. That means we don’t guess at depth. We pull the regional driller reports for your specific section before we ever roll a rig.
             </p>
             <p className="mt-4 text-base md:text-lg leading-relaxed text-ink/75">
               The result: fewer dry holes, fewer surprises, and a system that just works for the next twenty years.
@@ -64,10 +64,10 @@ export default function HomePage() {
             </div>
           </div>
           <div className="grid grid-cols-2 gap-4">
-            <Stat n="25+" label="Years drilling the Hill Country" />
-            <Stat n="3,200+" label="Wells installed across Texas" />
-            <Stat n="<1 hr" label="Average emergency response" />
-            <Stat n="4.9★" label="From 187+ verified reviews" />
+            <Stat n="Hill Country" label="Texas geology & aquifer expertise" />
+            <Stat n="Full-service" label="Drilling, install, repair, emergency" />
+            <Stat n="<1 hr" label="Average response to form requests" />
+            <Stat n="Family-run" label="Honest answers, no high-pressure sales" />
           </div>
         </div>
       </section>
@@ -189,7 +189,7 @@ export default function HomePage() {
 function Stat({ n, label }: { n: string; label: string }) {
   return (
     <div className="rounded-xl border border-ink/10 bg-white p-5 shadow-rugged">
-      <div className="font-display text-4xl text-rust leading-none">{n}</div>
+      <div className="font-display text-2xl md:text-3xl text-rust leading-tight">{n}</div>
       <div className="mt-2 text-sm leading-snug text-ink/70">{label}</div>
     </div>
   );

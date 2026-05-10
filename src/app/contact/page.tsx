@@ -26,10 +26,10 @@ export default function ContactPage() {
       <section className="section">
         <div className="container-narrow grid gap-10 md:grid-cols-5">
           <div className="md:col-span-2 space-y-4">
-            <Block title="Email" body={<a className="text-rust hover:underline break-all" href={`mailto:${SITE.email}`}>{SITE.email}</a>} />
             <Block title="Hours" body={<span>{SITE.hours}</span>} />
             <Block title="Service Area" body={<span>Across the Texas Hill Country — Fredericksburg, Boerne, Marble Falls, Dripping Springs, Burnet & Blanco Counties.</span>} />
             <Block title="Emergency" body={<span>Flag your request as <span className="font-bold text-rust">Urgency&nbsp;5 · No-Water Emergency</span> and you’ll skip the queue.</span>} />
+            <Block title="Email" body={<a className="text-rust hover:underline break-all" href={`mailto:${SITE.email}`}>{SITE.email}</a>} />
           </div>
           <div className="md:col-span-3">
             <QuoteForm />

@@ -1,14 +1,13 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
-import { SITE } from '@/lib/site';
 import { TrustBadges } from '@/components/TrustBadges';
 import { Testimonials } from '@/components/Testimonials';
 import { BreadcrumbSchema } from '@/components/Schema';
 
 export const metadata: Metadata = {
-  title: 'About | Family-Owned Water Well Drillers',
+  title: 'About | Texas Hill Country Water Well Services',
   description:
-    'Family-owned Texas Hill Country water well drillers since 1998. Licensed, insured, and answerable. Meet the crew that drills, installs, and stands behind your system.',
+    'Family-run Texas Hill Country water well services. Insured, focused on this region, and answerable. Meet the team behind the work.',
   alternates: { canonical: '/about' },
 };
 
@@ -18,9 +17,9 @@ export default function AboutPage() {
       <section className="border-b border-ink/10 bg-bone">
         <div className="container-wide py-16 md:py-24">
           <span className="eyebrow">About</span>
-          <h1 className="h-display mt-3 max-w-3xl">{SITE.yearsInBusiness}+ years drilling the Texas Hill Country.</h1>
+          <h1 className="h-display mt-3 max-w-3xl">Texas Hill Country water wells. Done with care.</h1>
           <p className="mt-5 max-w-2xl text-lg text-ink/70">
-            We’re a family-owned, licensed Texas water well company. We drill, install, and repair — and we follow up fast on every request, day or night.
+            We’re a family-run Texas water well service. We drill, install, and repair — and we follow up fast on every request, day or night.
           </p>
         </div>
       </section>

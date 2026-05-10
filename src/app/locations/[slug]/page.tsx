@@ -45,7 +45,7 @@ export default async function LocationPage({ params }: { params: Promise<{ slug:
           <span className="eyebrow">Location · {l.county}</span>
           <h1 className="h-display mt-3 max-w-4xl">Well Drilling <span className="text-rust">{l.city}, TX.</span></h1>
           <p className="mt-5 max-w-3xl text-lg leading-relaxed text-ink/70">
-            Licensed water well drilling, pump install, and emergency service in {l.city} and across {l.county}. We know the local geology, the local aquifers, and the local groundwater district.
+            Water well drilling, pump install, and emergency service in {l.city} and across {l.county}, performed by licensed local drillers. We know the local geology, the local aquifers, and the local groundwater district.
           </p>
           <div className="mt-8 flex flex-wrap gap-3">
             <Link href={`/quote?location=${encodeURIComponent(l.city)}`} className="btn-primary">Free On-Site Visit in {l.city}</Link>

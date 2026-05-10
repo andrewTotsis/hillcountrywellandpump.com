@@ -3,21 +3,21 @@ const REVIEWS = [
     name: 'Marcus & Lainey R.',
     where: 'Stonewall, TX',
     body:
-      'We built on raw acreage outside Stonewall and the first driller we called gave us a quote that didn’t include casing. Hill Country Well & Pump showed up, walked the property, pulled regional reports, and gave us a real number. Hit water at 612 ft, exactly where they said we would.',
+      'We built on raw acreage outside Stonewall and the first crew we called gave us a quote that didn’t include casing. Hill Country Well & Pump walked the property, pulled regional reports, and gave us a real number. The job came in on time and on quote — no surprises.',
     rating: 5,
   },
   {
     name: 'Theresa M.',
     where: 'Boerne, TX',
     body:
-      'Pump quit on a Friday afternoon — house full of weekend guests. They took the call, were on site Saturday morning, and had us back up by lunch. Honest, no upsell, the pressure tank was the real problem and they said so.',
+      'Pump quit on a Friday afternoon. They responded fast, were on site the next morning, and had us back up by lunch. Honest — they told us the real problem and didn’t try to sell us anything we didn’t need.',
     rating: 5,
   },
   {
     name: 'Don K.',
     where: 'Dripping Springs, TX',
     body:
-      'I run 22 head of cattle and lost the well in the August drought. They drilled a deeper Trinity replacement, sized the system for the herd, and threw in a buffer tank I didn’t know I needed. Two summers later, no issues.',
+      'I run cattle on our property and the well had been getting weaker for years. They drilled a proper replacement, sized the system for the herd, and threw in a buffer tank I didn’t know I needed. Couldn’t be happier with the result.',
     rating: 5,
   },
 ];

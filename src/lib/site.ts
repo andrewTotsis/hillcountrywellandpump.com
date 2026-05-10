@@ -1,6 +1,6 @@
 export const SITE = {
   name: 'Hill Country Well & Pump',
-  legalName: 'Hill Country Well & Pump Co.',
+  legalName: 'Hill Country Well & Pump',
   domain: 'hillcountrywellandpump.com',
   url: 'https://hillcountrywellandpump.com',
   // Text-only contact. We do not take phone calls — every request runs through the form
@@ -8,20 +8,17 @@ export const SITE = {
   textNumber: process.env.NEXT_PUBLIC_TEXT_NUMBER || '',
   textNumberRaw: process.env.NEXT_PUBLIC_TEXT_NUMBER_RAW || '',
   email: process.env.NEXT_PUBLIC_EMAIL || 'hillcountrywellandpump@gmail.com',
-  address: {
-    street: '1402 Ranch Road 1376',
-    city: 'Fredericksburg',
-    region: 'TX',
-    postalCode: '78624',
+  // Service-area business — no fixed street address. We serve customers at their property.
+  serviceRegion: {
+    name: 'Texas Hill Country',
+    state: 'TX',
     country: 'US',
   },
-  geo: { lat: 30.2752, lng: -98.8719 },
+  geo: { lat: 30.2752, lng: -98.8719 }, // approximate region center, not a business location
   hours: 'Online 24/7 · Form responses within 1 business hour',
-  founded: 1998,
-  yearsInBusiness: new Date().getFullYear() - 1998,
   social: {
-    facebook: 'https://www.facebook.com/hillcountrywellandpump',
-    google: 'https://g.page/hillcountrywellandpump',
+    facebook: '',
+    google: '',
   },
   serviceAreas: [
     'Fredericksburg',

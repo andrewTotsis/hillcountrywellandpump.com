@@ -22,7 +22,7 @@ export function ServiceGrid({ heading = true }: { heading?: boolean }) {
           <span className="eyebrow">What we do</span>
           <h2 className="h-section mt-3">Full-service well &amp; pump for Hill Country properties.</h2>
           <p className="mt-4 text-base md:text-lg text-ink/70">
-            One licensed crew. Drilling, install, repair, inspections, and emergency response — all under one roof.
+            One local crew. Drilling, install, repair, inspections, and emergency response — all under one roof.
           </p>
         </div>
       )}

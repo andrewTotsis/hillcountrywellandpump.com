@@ -6,17 +6,17 @@ import { BreadcrumbSchema } from '@/components/Schema';
 export const metadata: Metadata = {
   title: 'Reviews | Hill Country Well & Pump',
   description:
-    'Verified reviews from Texas Hill Country homeowners. 4.9-star average across drilling, pump install, and emergency service.',
+    'What Texas Hill Country homeowners say about working with Hill Country Well & Pump — drilling, pump install, and emergency service.',
   alternates: { canonical: '/reviews' },
 };
 
 const MORE = [
-  { name: 'Jenna P.', where: 'Fredericksburg, TX', body: 'They drilled our new ranch well off Cherry Spring Rd and were upfront the whole way. Hit good Hickory water at 540 ft and the system has been flawless.' },
-  { name: 'Russell H.', where: 'Marble Falls, TX', body: 'Replaced our 17-year-old pump. Same-day service, fair price, and they put a real Franklin in instead of the cheap one the last guy used.' },
-  { name: 'Amelia C.', where: 'Wimberley, TX', body: 'Pre-purchase well inspection saved us $40k. They flagged a corroded casing the seller hadn’t disclosed and we walked. We’d call them again in a heartbeat.' },
-  { name: 'Tom & Carla S.', where: 'Bandera, TX', body: 'Honest people. We had two other quotes that were $8k apart and HCWP came in the middle, explained why, and stuck to it. Five stars.' },
-  { name: 'Jorge M.', where: 'Boerne, TX', body: 'Pressure tank failed on a Saturday during a family reunion. Submitted the form, they replied within ten minutes and had us back in business by 3pm. Lifesavers.' },
-  { name: 'Rebecca W.', where: 'Burnet, TX', body: 'Installed a constant-pressure system on our long pipe run and finally — I have real water pressure in my upstairs shower for the first time in 12 years.' },
+  { name: 'Jenna P.', where: 'Fredericksburg, TX', body: 'They drilled our new ranch well and were upfront the whole way. The system has been working great.' },
+  { name: 'Russell H.', where: 'Marble Falls, TX', body: 'Replaced our old pump. Same-day service, fair price, and they put a quality Franklin in instead of the cheap unit our previous crew had used.' },
+  { name: 'Amelia C.', where: 'Wimberley, TX', body: 'Pre-purchase well inspection saved us a huge headache. They flagged an issue with the casing the seller hadn’t disclosed and we walked. We’d work with them again in a heartbeat.' },
+  { name: 'Tom & Carla S.', where: 'Bandera, TX', body: 'Honest people. We had two other quotes that were thousands apart and Hill Country Well & Pump came in the middle, explained why, and stuck to it.' },
+  { name: 'Jorge M.', where: 'Boerne, TX', body: 'Pressure tank failed on a Saturday during a family reunion. Submitted the form, they replied within minutes and had us back in business by the afternoon. Lifesavers.' },
+  { name: 'Rebecca W.', where: 'Burnet, TX', body: 'Installed a constant-pressure system on our long pipe run and finally — I have real water pressure in my upstairs shower.' },
 ];
 
 export default function ReviewsPage() {
@@ -25,9 +25,9 @@ export default function ReviewsPage() {
       <section className="border-b border-ink/10 bg-bone">
         <div className="container-wide py-14 md:py-20">
           <span className="eyebrow">Reviews</span>
-          <h1 className="h-display mt-3 max-w-3xl">4.9 stars across the Hill Country.</h1>
+          <h1 className="h-display mt-3 max-w-3xl">What Hill Country homeowners say.</h1>
           <p className="mt-5 max-w-2xl text-lg text-ink/70">
-            Verified reviews from real Texas Hill Country homeowners — pre-purchase inspections, new construction wells, pump emergencies, and everything between.
+            Feedback from Texas Hill Country homeowners — pre-purchase inspections, new construction wells, pump emergencies, and everything in between.
           </p>
         </div>
       </section>
